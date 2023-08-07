@@ -24,7 +24,7 @@ class AuthorsSpider(scrapy.Spider):
     name = 'authors'
     custom_settings = {"FEED_FORMAT": "json", "FEED_URI": "jsons/authors.json"}
     allowed_domains = ['quotes.toscrape.com']
-    start_urls = base_urls = ['http://quotes.toscrape.com/']
+    start_urls = ['http://quotes.toscrape.com/']
 
     def parse(self, response, **kwargs):
         for author_div in response.css("div.quote"):
